@@ -1,0 +1,9 @@
+
+Duration test from std::array is: 107 milliseconds.
+Usage of memory: 4920 KB
+
+Duration test from std::vector is: 3 milliseconds.
+Usage of memory: 4936 KB
+
+Duration test from std::list is: 8 milliseconds.
+Usage of memory: 4936 KB
