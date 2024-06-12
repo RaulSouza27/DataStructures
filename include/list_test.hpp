@@ -11,7 +11,7 @@ namespace data
     public:
         void fill_list();
         void print_list();
-        void clear_list();
+        auto get_list() -> std::list<uint8_t>&;
     };
     
 } // namespace data

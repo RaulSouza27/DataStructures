@@ -19,8 +19,8 @@ namespace data
         }
     }
 
-    void ListTest::clear_list()
+    auto ListTest::get_list() -> std::list<uint8_t>&
     {
-        my_list.clear();
+        return my_list;
     }
 } // namespace data

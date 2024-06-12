@@ -12,6 +12,6 @@ namespace data
     public:
         void fill_vector();
         void print_vector();
-        void clear_vector();
+        auto get_vector() -> std::vector<uint8_t>&;
     };
 } // namespace data

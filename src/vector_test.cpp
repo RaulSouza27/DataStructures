@@ -11,16 +11,12 @@ namespace data
         }
     }
 
-    void VectorTest::print_vector()
+    auto VectorTest::get_vector() -> std::vector<uint8_t>&
     {
-        for (size_t i = 0; i < vector_test.size(); i++)
-        {
-            vector_test.pop_back();
-        }
-        
+        return vector_test;
     }
 
-    void VectorTest::clear_vector()
+    void VectorTest::print_vector()
     {
         for (size_t i = 0; i < vector_test.size(); i++)
         {

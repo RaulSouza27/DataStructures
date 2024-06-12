@@ -3,4 +3,9 @@
 O seguinte projeto tem como objetivo fazer vários testes em estruturas de dados e ampliar o conhecimento em C++.
 
 ### Estruturas testadas nesse projeto
-    - 
+| Data | Hora | Estrutura | Tempo gasto | Memória utilizada |
+| --- | --- | --- | --- | --- |
+| 11/5/2024 | 23:55:14 | std::array | 16 milliseconds  | 255 Bytes |
+| 11/5/2024 | 23:55:20 | std::vector | 26 milliseconds  | 287 Bytes |
+| 11/5/2024 | 23:55:20 | std::list | 30 milliseconds  | 279 Bytes |
+| 11/5/2024 | 23:55:20 | std::deque | 20 milliseconds  | 295 Bytes |

@@ -12,7 +12,7 @@ namespace data
         std::array<uint8_t, 255> array_test;
     public:
         void fill_array();
-        void clear_array();
+        auto get_array() -> std::array<uint8_t, 255>&;
         void print_array();
     };
     

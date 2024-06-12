@@ -10,12 +10,9 @@ namespace data
         }
     }
 
-    void ArrayTest::clear_array()
+    auto ArrayTest::get_array() -> std::array<uint8_t, 255>&
     {
-        for (size_t i = 0; i < 255; i++)
-        {
-            array_test.at(i) = 0;
-        }
+        return array_test;
     }
 
     void ArrayTest::print_array()
