@@ -15,6 +15,7 @@ add_library(
     src/vector_test.cpp
     src/list_test.cpp
     src/deque_test.cpp
+    src/queue_test.cpp
     src/utils.cpp
 )
 

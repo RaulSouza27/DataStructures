@@ -2,6 +2,7 @@
 #include "list_test.hpp"
 #include "vector_test.hpp"
 #include "deque_test.hpp"
+#include "queue_test.hpp"
 #include "utils.hpp"
 #include "catch.hpp"
 #include <chrono>
@@ -12,6 +13,7 @@ namespace data
     long long list_time(ListTest &);
     long long vector_time(VectorTest &);
     long long deque_time(DequeTest &);
+    long long queue_time(QueueTest &);
 
     TEST_CASE("Testing fill, print and clear performance")
     {
@@ -19,6 +21,7 @@ namespace data
         ListTest list_test;
         VectorTest vector_test;
         DequeTest deque_test;
+        QueueTest queue_test;
 
         std::vector<Performance> perf;
         Performance array;
@@ -52,6 +55,14 @@ namespace data
         deque.time = utils::get_system_time();
         deque.memory_usage = deque_test.get_deque().size() + sizeof(DequeTest);
         perf.push_back(deque);
+
+        Performance queue;
+        queue.time_spend = queue_time(queue_test);
+        queue.data_struct = "std::queue";
+        queue.date = utils::get_system_date();
+        queue.time = utils::get_system_time();
+        queue.memory_usage = queue_test.get_queue().size() + sizeof(QueueTest);
+        perf.push_back(queue);
 
         REQUIRE(utils::write_all_report(perf));
     }
@@ -91,6 +102,16 @@ namespace data
         auto start = std::chrono::high_resolution_clock::now();
         test.fill_deque();
         test.print_deque();
+        auto end = std::chrono::high_resolution_clock::now();
+        auto time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+        return time.count();
+    }
+
+    long long queue_time(QueueTest &test)
+    {
+        auto start = std::chrono::high_resolution_clock::now();
+        test.fill_queue();
+        test.print_queue();
         auto end = std::chrono::high_resolution_clock::now();
         auto time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
         return time.count();

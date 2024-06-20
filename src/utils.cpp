@@ -48,20 +48,6 @@ namespace utils
         }
     }
 
-    long long get_memory_usage()
-    {
-        PROCESS_MEMORY_COUNTERS pmc;
-        if (GetProcessMemoryInfo(GetCurrentProcess(), &pmc, sizeof(pmc)))
-        {
-            auto memory_usage = (pmc.WorkingSetSize / 1024);
-            return memory_usage;
-        }
-        else
-        {
-            return 0;
-        }
-    }
-
     auto get_system_time() -> std::string
     {
         time_t now = time(0);
